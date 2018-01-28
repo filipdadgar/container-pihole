@@ -1,4 +1,4 @@
-# container-
+# container-pihole
 
 To be able to run Pi-hole in a container, some variables like IPv4 and IPv6 need to be pulled.
 
@@ -11,7 +11,7 @@ DOCKER_CONFIGS="$(pwd)"  # Default of directory you run this from, update to whe
 
 echo "IP: ${IP} - IPv6: ${IPv6}"
 
-# Default ports + daemonized docker container
+Default ports + daemonized docker container
 docker run -d \
     --name pihole \
     -p 53:53/tcp -p 53:53/udp -p 80:80 \
@@ -23,6 +23,6 @@ docker run -d \
 
 docker logs pihole 2> /dev/null | grep 'password
 
-Add piholes ip as DNS server in DHCP configuration (usaully the router) or manually change dns servers for clients to pihole ip.
+# Add piholes ip as DNS server in DHCP configuration (usaully the router) or manually change dns servers for clients to pihole ip.
 
 
